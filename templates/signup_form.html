@@ -3,24 +3,30 @@
 {% block content %}
 
 <h1>Signup</h1>
+<form method="post">
 <table style="widows: 50%">
     <tr>
         <th>Username</th>
-        <td><input type="text" /></td>      
+        <td><input type="text" name="username" value= "{{username}}" ></td>
+        <td class="error">{{username_message}}</td>
     </tr>
     <tr>
         <th>Password</th>
-        <td><input type="text" /></td>
+        <td><input type="text" name="password" value= "{{password}}"></td>
+        <td class="error">{{password_message}}</td>
     </tr>
     <tr>
         <th>Verify Password</th>
-        <td><input type="text" /></td>
+        <td><input type="text" name="verify" value="{{verify}}"></td>
+        <td class="error">{{verify_message}}</td>
     </tr>
     <tr>
         <th>Email (optional)</th>
-        <td><input type="text" /></td>
+        <td><input type="text" name="email" value="{{email}}"></td>
+        <td class="error">{{email_message}}</td>
     </tr>
 </table>
-<input type="submit" />
-
+<input type="submit"/>
+</form>
+<p class="error">{{error_message}}</p>
 {% endblock %}
